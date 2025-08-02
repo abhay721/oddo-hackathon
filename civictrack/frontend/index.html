@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CivicTrack - Report Civic Issues</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CivicTrack</h1>
+        <p>Empower your community. Report, track, and resolve local issues.</p>
+    </header>
+    <main>
+        <section id="report">
+            <h2>Report an Issue</h2>
+            <form id="issueForm">
+                <input type="text" name="title" placeholder="Title" required><br>
+                <textarea name="description" placeholder="Short Description" required></textarea><br>
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Roads">Roads</option>
+                    <option value="Lighting">Lighting</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Public Safety">Public Safety</option>
+                    <option value="Obstructions">Obstructions</option>
+                </select><br>
+                <input type="text" name="address" placeholder="Location Address" required><br>
+                <input type="number" name="lat" placeholder="Latitude" step="any" required>
+                <input type="number" name="lng" placeholder="Longitude" step="any" required><br>
+                <input type="checkbox" name="anonymous" id="anonymous">
+                <label for="anonymous">Report Anonymously</label><br>
+                <input type="file" name="photos" multiple accept="image/*"><br>
+                <button type="submit">Submit Report</button>
+            </form>
+        </section>
+        <section id="mapview">
+            <h2>Reported Issues Near You</h2>
+            <div>
+                <label>Distance:</label>
+                <select id="distanceFilter">
+                    <option value="1">1 km</option>
+                    <option value="3">3 km</option>
+                    <option value="5" selected>5 km</option>
+                </select>
+                <label>Status:</label>
+                <select id="statusFilter">
+                    <option value="">All</option>
+                    <option value="Reported">Reported</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+                <label>Category:</label>
+                <select id="categoryFilter">
+                    <option value="">All</option>
+                    <option value="Roads">Roads</option>
+                    <option value="Lighting">Lighting</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Public Safety">Public Safety</option>
+                    <option value="Obstructions">Obstructions</option>
+                </select>
+                <button id="refreshBtn">Refresh</button>
+            </div>
+            <div id="map"></div>
+            <ul id="issuesList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Made for the CivicTrack challenge.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

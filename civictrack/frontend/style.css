@@ -1,0 +1,69 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f8fb;
+    margin: 0;
+    color: #333;
+}
+header {
+    background: #0082ca;
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+}
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    padding: 2em;
+}
+section {
+    margin-bottom: 2em;
+}
+h2 {
+    color: #0082ca;
+}
+form input, form textarea, form select {
+    padding: 0.7em;
+    margin: 0.3em 0;
+    width: 95%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+form button {
+    background: #0082ca;
+    color: #fff;
+    border: none;
+    padding: 0.8em 2em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+#map {
+    width: 100%;
+    height: 300px;
+    margin: 1em 0;
+    background: #eee;
+    border-radius: 6px;
+    position: relative;
+    min-height: 250px;
+}
+#issuesList {
+    list-style: none;
+    padding: 0;
+}
+#issuesList li {
+    background: #f9fcff;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid #e3eaf3;
+    box-shadow: 0 2px 8px rgba(0,130,202,0.05);
+}
+footer {
+    text-align: center;
+    padding: 1.5em 0;
+    background: #e3eaf3;
+    color: #0082ca;
+}

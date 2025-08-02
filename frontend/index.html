@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CivicTrack - Report Civic Issues</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+    <header>
+        <h1>CivicTrack</h1>
+        <nav>
+            <button id="loginBtn">Login</button>
+            <button id="logoutBtn" style="display:none;">Logout</button>
+            <button id="adminBtn" style="display:none;">Admin</button>
+        </nav>
+    </header>
+    <main>
+        <section id="authSection" style="display:none;">
+            <h2>Login or Register</h2>
+            <form id="authForm">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="text" name="name" placeholder="Name (register only)">
+                <button type="submit" id="loginSubmit">Login</button>
+                <button type="button" id="registerSubmit">Register</button>
+            </form>
+        </section>
+        <section id="reportSection">
+            <h2>Report an Issue</h2>
+            <form id="issueForm">
+                <input type="text" name="title" placeholder="Title" required>
+                <textarea name="description" placeholder="Short Description" required></textarea>
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Roads">Roads</option>
+                    <option value="Lighting">Lighting</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Public Safety">Public Safety</option>
+                    <option value="Obstructions">Obstructions</option>
+                </select>
+                <input type="text" name="address" placeholder="Location Address" required>
+                <input type="number" name="lat" id="lat" placeholder="Latitude" step="any" required>
+                <input type="number" name="lng" id="lng" placeholder="Longitude" step="any" required>
+                <button type="button" id="getLocationBtn">Use My Location</button>
+                <label>
+                    <input type="checkbox" name="anonymous" id="anonymous">
+                    Report Anonymously
+                </label>
+                <input type="file" name="photos" multiple accept="image/*">
+                <button type="submit">Submit Report</button>
+            </form>
+        </section>
+        <section id="mapview">
+            <h2>Reported Issues Near You</h2>
+            <div class="filters">
+                <select id="distanceFilter">
+                    <option value="1">1 km</option>
+                    <option value="3">3 km</option>
+                    <option value="5" selected>5 km</option>
+                </select>
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="Reported">Reported</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Roads">Roads</option>
+                    <option value="Lighting">Lighting</option>
+                    <option value="Water Supply">Water Supply</option>
+                    <option value="Cleanliness">Cleanliness</option>
+                    <option value="Public Safety">Public Safety</option>
+                    <option value="Obstructions">Obstructions</option>
+                </select>
+                <button id="refreshBtn">Refresh</button>
+            </div>
+            <div id="map"></div>
+            <ul id="issuesList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>Made for the CivicTrack challenge.</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
